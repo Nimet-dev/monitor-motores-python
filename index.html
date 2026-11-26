@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Motores Industriais v1.0.0 | CentroWEG - SENAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <div class="badges-topo">
+                <span class="badge-local">SENAI • CentroWEG • Jaraguá do Sul - SC</span>
+                <span class="badge-versao">Versão 1.0.0</span>
+            </div>
+            <h1>Monitoramento de Motores Industriais</h1>
+            <p class="subtitulo">Sistema em Python para telemetria, detecção de anomalias e geração de plano de manutenção preventiva.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Contexto do Projeto -->
+        <section class="card contexto-card">
+            <h2>Contexto do Projeto</h2>
+            <p>
+                Desenvolvido no <strong>CentroWEG</strong> (unidade educacional do <strong>SENAI</strong> integrada à 
+                <strong>WEG</strong> em Jaraguá do Sul - SC), este script simula uma rotina de análise preditiva e preventiva 
+                em chão de fábrica.
+            </p>
+            <p>
+                A aplicação processa leituras de sensores de quatro setores industriais (<em>Estamparia, Usinagem, Bobinagem e Pintura</em>), 
+                valida a integridade dos dados, classifica o nível de criticidade de cada equipamento e organiza a fila de manutenção.
+            </p>
+        </section>
+
+        <!-- Parâmetros e Limites Operacionais -->
+        <section class="card">
+            <h2>Parâmetros e Limites Operacionais (<code>LIMITES</code>)</h2>
+            <p>O algoritmo compara as leituras em tempo real com os seguintes limiares de segurança:</p>
+            
+            <div class="tabela-wrapper">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Variável Monitorada</th>
+                            <th>Chave no Dicionário</th>
+                            <th>Limite Estabelecido</th>
+                            <th>Condição de Alerta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Temperatura</strong></td>
+                            <td><code>temperatura_max</code></td>
+                            <td>80.0 °C</td>
+                            <td>Superaquecimento acima de 80.0 °C</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corrente Elétrica</strong></td>
+                            <td><code>corrente_max</code></td>
+                            <td>18.5 A</td>
+                            <td>Sobrecorrente acima de 18.5 A</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vibração Mecânica</strong></td>
+                            <td><code>vibracao_max</code></td>
+                            <td>4.5 mm/s</td>
+                            <td>Vibração elevada acima de 4.5 mm/s</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rotação (RPM)</strong></td>
+                            <td><code>rpm_min</code> / <code>rpm_max</code></td>
+                            <td>1400 – 1800 RPM</td>
+                            <td>Rotação fora da faixa nominal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Arquitetura das Funções -->
+        <section class="card">
+            <h2>Arquitetura Modular do Sistema</h2>
+            <div class="grid-funcionalidades">
+                <div class="item-funcao">
+                    <h3><code>validar_leitura()</code> &amp; <code>obter_leituras_validas()</code></h3>
+                    <p>Garantem a integridade dos dados filtrando registros que possuam campos nulos, ausentes ou valores físicos negativos.</p>
+                </div>
+
+                <div class="item-funcao">

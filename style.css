@@ -1,0 +1,263 @@
+/* Paleta de Cores Institucional WEG */
+:root {
+    --weg-azul-principal: #00579D;
+    --weg-azul-escuro: #003B70;
+    --weg-azul-destaque: #0082D6;
+    --weg-azul-suave: #E6F0F8;
+    --fundo-pagina: #F4F6F9;
+    --fundo-card: #FFFFFF;
+    --texto-principal: #22252A;
+    --texto-secundario: #525866;
+    --borda-sutil: #DCE1E7;
+    --fundo-codigo: #1A202C;
+    --texto-codigo: #E2E8F0;
+    
+    /* Cores de Status Industrial */
+    --status-normal: #2ECC71;
+    --status-atencao: #F1C40F;
+    --status-critico: #E74C3C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--fundo-pagina);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: linear-gradient(135deg, var(--weg-azul-escuro) 0%, var(--weg-azul-principal) 100%);
+    color: #FFFFFF;
+    padding: 48px 0;
+    border-bottom: 5px solid var(--weg-azul-destaque);
+    margin-bottom: 32px;
+}
+
+.badges-topo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.badge-local, .badge-versao {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-versao {
+    background-color: var(--weg-azul-destaque);
+    border-color: transparent;
+}
+
+.cabecalho h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #D0E4F5;
+}
+
+/* Cartões */
+.card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-sutil);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.contexto-card {
+    border-left: 5px solid var(--weg-azul-principal);
+}
+
+.card h2 {
+    color: var(--weg-azul-escuro);
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--weg-azul-suave);
+}
+
+.card p {
+    margin-bottom: 14px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Código inline */
+p code, h2 code, h3 code, td code {
+    background-color: var(--weg-azul-suave);
+    color: var(--weg-azul-escuro);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* Tabela de Limites */
+.tabela-wrapper {
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.tabela-dados th {
+    background-color: var(--weg-azul-principal);
+    color: #FFFFFF;
+    padding: 12px 16px;
+    font-weight: 600;
+}
+
+.tabela-dados td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--borda-sutil);
+}
+
+.tabela-dados tbody tr:nth-child(even) {
+    background-color: var(--fundo-pagina);
+}
+
+/* Grid de Funções */
+.grid-funcionalidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.item-funcao {
+    background-color: var(--fundo-pagina);
+    border: 1px solid var(--borda-sutil);
+    border-top: 3px solid var(--weg-azul-destaque);
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.item-funcao h3 {
+    color: var(--weg-azul-principal);
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+}
+
+.item-funcao p {
+    font-size: 0.94rem;
+    color: var(--texto-secundario);
+}
+
+/* Simulação de Terminal */
+.terminal-box {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.terminal-header {
+    background-color: #2D3748;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.red { background-color: #FF5F56; }
+.dot.yellow { background-color: #FFBD2E; }
+.dot.green { background-color: #27C93F; }
+
+.terminal-title {
+    color: #CBD5E0;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+.terminal-body {
+    background-color: #11161D;
+    color: #E2E8F0;
+    padding: 18px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.status-normal { color: var(--status-normal); font-weight: bold; }
+.status-atencao { color: var(--status-atencao); font-weight: bold; }
+.status-critico { color: var(--status-critico); font-weight: bold; }
+
+/* Bloco de Código-Fonte */
+.codigo-fonte {
+    background-color: var(--fundo-codigo);
+    color: var(--texto-codigo);
+    padding: 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 16px;
+    border-left: 4px solid var(--weg-azul-destaque);
+}
+
+.codigo-fonte code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--weg-azul-escuro);
+    color: #D0E4F5;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .cabecalho h1 {
+        font-size: 1.7rem;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
